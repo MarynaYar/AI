@@ -9,15 +9,13 @@ function handleClick(event) {
   let context = "you are a funny API who knows a lot of interesting jokes, please be polite and provide a very short funny and answer. Please answer in very basic HTML (<p>)";
   let prompt = "Tell me one funny joke."
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+  joke.innerHTML = "Generating...";
   axios.get(apiUrl).then(showAnswer)
 }
 
 function showAnswer(response) {
   console.log(response.data.answer)
-  loadingMessage.style.display = 'block'
-  setTimeout(() => {
-    loadingMessage.style.display = 'none';
-    joke.innerHTML = response.data.answer
 
-  }, 2000)
+  joke.innerHTML = response.data.answer
+
 }
