@@ -31,3 +31,36 @@ form {
   margin: 50px auto;
   max-width: 700px;
 }
+
+.prompt {
+  padding: 16px;
+  border: 1px solid rgba(39, 33, 66, 0.5);
+  border-radius: 5px;
+  width: 80%;
+}
+
+.submit {
+  margin-left: 10px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  padding: 14px 25px;
+  width: 125px;
+  font-size: 16px;
+}
+
+.main-box {
+  font-size: 16px;
+  background-color: azure;
+  padding: 15px;
+  line-height: 2;
+  border-left: 3px solid black;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
