@@ -6,18 +6,36 @@ let hikeBox = document.querySelector("#hike");
 function generateHike(event) {
   event.preventDefault()
 
-  hikeBox.innerHTML = '  '
-  let myText = "Hello, world! This is a typewriter effect. Hello, world! This is a typewriter effect. Hello, world! This is a typewriter effect.";
-  typeWriter(myText, 'hike', 50);
+  let userPrompt = document.querySelector("#user-prompt");
+  let apiKey = "a4o42d4123dtaddfba780dacafeb203f";
+  let context = `You are a funny API who knows a lot of interesting jokes, please be polite and provide a very short funny and answer.Sing at the end on a new line "HikingAI" inside the <strong> HTML element`;
+  let prompt = `Tell me one funny joke about${userPrompt.value}. Make the answer without a big space beetween the rows.`
+  let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
+
+
+  axios.get(apiUrl).then(showAnswer);
 }
 
 function typeWriter(text, elementId, speed) {
   let i = 0;
+  let isTag = false;
+  let textBuffer = '';
   const elem = document.getElementById(elementId);
 
   function typing() {
     if (i < text.length) {
-      elem.innerHTML += text.charAt(i);
+      if (text[i] === '<') {
+        isTag = true;
+      } else if (text[i] === '>') {
+        isTag = false;
+      }
+
+      textBuffer += text[i];
+
+      if (!isTag || text[i] === '>') {
+        elem.innerHTML = textBuffer;
+      }
+
       i++;
       setTimeout(typing, speed);
     }
@@ -27,6 +45,12 @@ function typeWriter(text, elementId, speed) {
 }
 
 
+function showAnswer(response) {
+  console.log(response.data.answer)
+  hikeBox.innerHTML = '  '
+  let myText = response.data.answer;
+  typeWriter(myText, 'hike', 50);
+}
 
 
 
