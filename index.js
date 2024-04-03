@@ -1,4 +1,37 @@
-let joke = document.querySelector("#joke")
+let form = document.querySelector("#form");
+form.addEventListener("submit", generateHike);
+let hikeBox = document.querySelector("#hike");
+
+
+function generateHike(event) {
+  event.preventDefault()
+
+  hikeBox.innerHTML = '  '
+  let myText = "Hello, world! This is a typewriter effect. Hello, world! This is a typewriter effect. Hello, world! This is a typewriter effect.";
+  typeWriter(myText, 'hike', 50);
+}
+
+function typeWriter(text, elementId, speed) {
+  let i = 0;
+  const elem = document.getElementById(elementId);
+
+  function typing() {
+    if (i < text.length) {
+      elem.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing, speed);
+    }
+  }
+
+  typing();
+}
+
+
+
+
+
+
+/* let joke = document.querySelector("#joke")
 let loadingMessage = document.querySelector("#loadingMessage")
 let mainButton = document.querySelector("#main-button");
 mainButton.addEventListener("click", handleClick)
@@ -18,4 +51,4 @@ function showAnswer(response) {
 
   joke.innerHTML = response.data.answer
 
-}
+} */
