@@ -22,9 +22,6 @@ h1 {
 }
 
 form {
-  padding: 30px;
-  background-color: azure;
-  border-radius: 10px;
   display: flex;
 }
 
@@ -35,6 +32,20 @@ strong {
 .container {
   margin: 50px auto;
   max-width: 700px;
+}
+
+.form-container {
+  background-color: azure;
+  border-radius: 10px;
+  font-size: 10px;
+  padding: 30px;
+}
+
+.small {
+  margin-left: 10px;
+  margin-top: 7px;
+  opacity: 0.7;
+  font-size: 12px;
 }
 
 .prompt {
@@ -60,6 +71,26 @@ strong {
   padding: 15px;
   line-height: 2;
   border-left: 3px solid black;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes blinkAnimation {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blinkAnimation 2s linear infinite;
 }
 
 #hike {

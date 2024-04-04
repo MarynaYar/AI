@@ -8,12 +8,24 @@ function generateHike(event) {
 
   let userPrompt = document.querySelector("#user-prompt");
   let apiKey = "a4o42d4123dtaddfba780dacafeb203f";
-  let context = `You are a funny API who knows a lot of interesting jokes, please be polite and provide a very short funny and answer.Sing at the end on a new line "HikingAI" inside the <strong> HTML element`;
-  let prompt = `Tell me one funny joke about${userPrompt.value}. Make the answer without a big space beetween the rows.`
+  let context = `You are a funny API who knows a lot of interesting jokes, please be polite and provide a very short funny and answer. Make the answer in one string. Sing in the end  "HikingAI" inside the <br><strong>HikingAI</strong> HTML element.`;
+  let prompt = `Tell me one funny joke about${userPrompt.value}.`
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
+  hikeBox.classList.remove("hidden");
+  hikeBox.innerHTML = `<span class="blink"> Generating....</span>`
 
-  axios.get(apiUrl).then(showAnswer);
+  setTimeout(() => {
+    axios.get(apiUrl).then(showAnswer);
+  }, 5000)
+
+}
+
+function showAnswer(response) {
+  console.log(response.data.answer)
+  hikeBox.innerHTML = '  '
+  let myText = response.data.answer;
+  typeWriter(myText, 'hike', 50);
 }
 
 function typeWriter(text, elementId, speed) {
@@ -44,13 +56,6 @@ function typeWriter(text, elementId, speed) {
   typing();
 }
 
-
-function showAnswer(response) {
-  console.log(response.data.answer)
-  hikeBox.innerHTML = '  '
-  let myText = response.data.answer;
-  typeWriter(myText, 'hike', 50);
-}
 
 
 

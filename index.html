@@ -15,12 +15,17 @@
       <h1 class="text">Welcome to the Hiking Generator</h1>
     </header>
     <main>
-      <form id="form">
-        <input id="user-prompt" class="prompt" type="text" placeholder="Enter locations..." autofocus required
-          autocomplete="off">
-        <input type="submit" class="submit">
-      </form>
-      <div id="hike" class="main-box">
+      <div class="form-container">
+        <form id="form">
+          <input id="user-prompt" class="prompt" type="text" placeholder="Enter locations..." autofocus required
+            autocomplete="off">
+          <input type="submit" class="submit">
+        </form>
+        <div class="small">
+          i.e Zurich, Interlaken, Grinderwald
+        </div>
+      </div>
+      <div id="hike" class="main-box hidden">
       </div>
       <button id="main-button">Tell me joke</button>
       <div id="loadingMessage" class="disabled">Generating...</div>
