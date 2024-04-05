@@ -12,14 +12,20 @@
 <body>
   <div class="container">
     <header>
-      <h1 class="text">Welcome to the Hiking Generator</h1>
+      <div class="logo-box">
+        <div class="logo-img-box">
+          <img class="img"
+            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/121/927/original/hiking_logo_welcome3.png?1712312054"
+            alt="">
+        </div>
+      </div>
     </header>
     <main>
       <div class="form-container">
         <form id="form">
           <input id="user-prompt" class="prompt" type="text" placeholder="Enter locations..." autofocus required
             autocomplete="off">
-          <input type="submit" class="submit">
+          <input type="submit" class="submit" value="Submit">
         </form>
         <div class="small">
           i.e Zurich, Interlaken, Grinderwald
@@ -27,9 +33,6 @@
       </div>
       <div id="hike" class="main-box hidden">
       </div>
-      <button id="main-button">Tell me joke</button>
-      <div id="loadingMessage" class="disabled">Generating...</div>
-      <div id="joke"></div>
     </main>
     <footer>
       <p>

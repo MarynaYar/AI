@@ -13,7 +13,7 @@ function generateHike(event) {
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
   hikeBox.classList.remove("hidden");
-  hikeBox.innerHTML = `<span class="blink"> Generating....</span>`
+  hikeBox.innerHTML = `<span class="blink"> Generating...</span>`
 
   setTimeout(() => {
     axios.get(apiUrl).then(showAnswer);
