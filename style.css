@@ -18,17 +18,17 @@ strong {
 }
 
 footer {
-  font-family: monospace;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
-  color: #2e2a2f;
+  color: #1d1c1c;
   font-size: 13px;
   padding: 10px;
   margin-bottom: -31px;
-
+  letter-spacing: 1.5px;
 }
 
 a {
-  color: #0e0d0e;
+  color: #f5f5dc;
   text-decoration: none;
 }
 
@@ -42,7 +42,7 @@ a:hover {
   border-radius: 10px;
   padding: 20px;
   box-shadow: 2px 8px 12px 2px rgba(129, 164, 96, 0.5);
-  background: linear-gradient(to bottom, rgb(221, 238, 185) 0%, #81a460 100%);
+  background: linear-gradient(to bottom, rgb(221, 238, 185) 0%, #89ae66 100%);
 }
 
 .form-container {
