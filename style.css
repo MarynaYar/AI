@@ -14,15 +14,35 @@ form {
 }
 
 strong {
-  color: blue;
+  color: #632929;
+}
+
+footer {
+  font-family: monospace;
+  text-align: center;
+  color: #2e2a2f;
+  font-size: 13px;
+  padding: 10px;
+  margin-bottom: -31px;
+
+}
+
+a {
+  color: #0e0d0e;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .container {
   margin: 30px auto;
   max-width: 500px;
-  border: 1px solid black;
   border-radius: 10px;
   padding: 20px;
+  box-shadow: 2px 8px 12px 2px rgba(129, 164, 96, 0.5);
+  background: linear-gradient(to bottom, rgb(221, 238, 185) 0%, #81a460 100%);
 }
 
 .form-container {
@@ -59,7 +79,7 @@ input:focus {
   margin-left: 10px;
   border: none;
   border-radius: 50px;
-  color: white;
+  color: #fdfbfa;
   padding: 14px 25px;
   width: 125px;
   font-size: 16px;
@@ -75,10 +95,12 @@ input:focus {
 
 .main-box {
   font-size: 16px;
-  background-color: azure;
+  margin-top: 10px;
+  background-color: #f0ead6;
+  border-radius: 10px;
   padding: 15px;
   line-height: 2;
-  border-left: 3px solid black;
+  border-left: 3px solid #632929;
 }
 
 .hidden {
@@ -115,12 +137,4 @@ input:focus {
 #hike {
   font-family: 'Courier New', Courier, monospace;
   white-space: pre-wrap;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }

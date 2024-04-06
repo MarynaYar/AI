@@ -8,8 +8,8 @@ function generateHike(event) {
 
   let userPrompt = document.querySelector("#user-prompt");
   let apiKey = "a4o42d4123dtaddfba780dacafeb203f";
-  let context = `You are a funny API who knows a lot of interesting jokes, please be polite and provide a very short funny and answer. Make the answer in one string. Sing in the end  "HikingAI" inside the <br><strong>HikingAI</strong> HTML element.`;
-  let prompt = `Tell me one funny joke about${userPrompt.value}.`
+  let context = `You are a API who knows a lot of interesting, panoramic, exciting, beautiful, amazin hikes. Please be polite and provide a very short and clear answer. Make the answer in one string. Sing in the end  "HikingAI" inside the <br><strong>HikingAI</strong> HTML element.`;
+  let prompt = `Tell me three amazing hikes in area or near ${userPrompt.value}.`
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
   hikeBox.classList.remove("hidden");
