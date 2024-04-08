@@ -8,8 +8,8 @@ function generateHike(event) {
 
   let userPrompt = document.querySelector("#user-prompt");
   let apiKey = "a4o42d4123dtaddfba780dacafeb203f";
-  let context = `You are a API who knows a lot of interesting, panoramic, exciting, beautiful, amazin hikes. Please be polite and provide a very short and clear answer. Make the answer in one string. Sing in the end  "HikingAI" inside the <br><strong>HikingAI</strong> HTML element. in English`;
-  let prompt = `Tell me three amazing hikes in area or near ${userPrompt.value}.`
+  let context = `You are a API who knows a lot of interesting, panoramic, exciting, beautiful, amazin hikes. Please be polite and provide a very short and clear answer. Make the answer in one string. Every hike should start with a new string and be with a number (example: 1. Albis Pass in Zurich, Switzerland 2. Lake Zurich Promenade in Zurich, Switzerland 3. Uetliberg Mountain in Zurich, Switzerland). Sing in the end  "HikingAI" inside the <br><strong>HikingAI</strong> HTML element. in English.`;
+  let prompt = `Tell me three amazing hikes in area or near ${userPrompt.value} where the data is: City (or village) and Country where this city (or village) is located or Country and City (or village). You need to write three amazing hikes near (very close) in  City (or village)`
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
   hikeBox.classList.remove("hidden");
